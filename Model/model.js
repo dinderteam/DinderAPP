@@ -3,12 +3,16 @@ let Schema = mongoose.Schema;
 
 let inputdata = new Schema({
     name: String,
-    type: String,
-    image: Array,
-    website: String,
-    rating: String,
     price: String,
-    phone: String,
+    rating: Number,
+    review_count: Number,
+    url: String,
+    image: Array,
+    display_phone: String,
+    display_address: String,
+    feeling: Boolean,
+
+  
 })
 
  model = mongoose.model('model', inputdata);

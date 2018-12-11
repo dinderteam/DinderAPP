@@ -5,6 +5,8 @@ const MongoClient = require('mongodb').MongoClient;
 const app = express();
 app.use(express.json());
 
+
+
 const model = require("../Model/model.js")
 
 /////////////////////////////////////////////
@@ -15,21 +17,46 @@ function logger(req, res, next) {
 }
 app.use(logger);
 /////////////////////////////////////////////
-app.post('/datas/', (request, response) => {
-    const collectionName = request.params.datas;
-    const data = "simon";
 
-    db.collection(collectionName)
-        .insert(data, (err, results) => {
-            // Got data back.. send to client
+
+// app.get("/", (request, response) => {
+//     let modelLay = new model()
+
+//     modelLay.name  = "Simon"
+//     db.collection("datas").insertOne(modelLay,(err)=>{
+//         if (err) throw err;
+//         response.send("success")
+//     })
+// })
+
+app.post('/data/', (request, response) => {
+    let mods = new model()
+    const data = request.body;
+    
+    for(let item in data['businesses']){
+        mods.name = item['name'];
+        mods.price = item['price'];
+        mods.rating = item['rating'];
+        mods.review_count = item['review_count'];
+        mods.url = item['url'];
+        mods.image = [item['image_url']];
+        mods.display_phone = item['display_phone'];
+        mods.display_address = item['display_address'];
+        let check = [mods.name, mods.url,mods.rating]
+        db.collection("datas").insertMany(check, (err) => {
             if (err) throw err;
+            console.log("success it works")
+        })
 
-            response.json({
-                'success': true,
-                'results': results,
-            });
-        });
-})
+    }
+
+
+    // db.collection("datas").insertOne(mods, (err) => {
+    //     if (err) throw err;
+    //     console.log("success it works")
+    // })
+});
+
 
 
 /////////////////////////////////////////////

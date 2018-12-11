@@ -3,8 +3,7 @@ import React, {Component} from 'react';
 import { StyleSheet, Text, View,Image,} from 'react-native';
 import SomeComponent from "./Components/SomeComponent/SomeComponent.js"
 // import Demo from "./Components/Picker/Picker.js"
-import request from 'superagent';
-import axios from "axios";
+
 
 export default class App extends Component {
 
@@ -14,7 +13,9 @@ export default class App extends Component {
     currentImage: "https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg",
   }
 
-componentWillMount(){
+componentWillMount(){}
+
+componentDidMount() {
   fetch("https://api.yelp.com/v3/businesses/search?term=food&radius=16093&location=oakland", {
     method: "GET",
     headers: new Headers({
@@ -25,25 +26,35 @@ componentWillMount(){
   })
     .then(response => response.json())
     .then(info => {
-      this.setState(()=>({
+       let holder = info;
+      this.setState(() => ({
         currentImage: info['businesses'][0]['image_url'],
         currentName: info['businesses'][0]['name']
       }));
+      this.pushIntoDB(holder)
+      
     });
-    this.putIntoDB()
-}
-componentDidMount() {
-
 }
 
-putIntoDB=()=>{
-  axios.post('/datas/',{
-    name:"simon",
-    type:"mexican",
+pushIntoDB=(holder)=>{  
+  for(item in holder){
+    console.log(item)
+  }
+
+  fetch('http://localhost:8080/data/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(holder),
   })
+    .then(response => response.json())
+    .then(data => {
+      console.log('Got this back', data);
 
-};
- 
+      // Redirect to blog
+      this.props.history.push('/data/');
+    });
+
+}
 
 
 onChangeHandler=(differ)=>{
