@@ -7,7 +7,7 @@ let inputdata = new Schema({
     rating: Number,
     review_count: Number,
     url: String,
-    image: Array,
+    image: String,
     display_phone: String,
     display_address: String,
     feeling: Boolean,

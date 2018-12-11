@@ -7,6 +7,7 @@ app.use(express.json());
 
 
 
+
 const model = require("../Model/model.js")
 
 /////////////////////////////////////////////
@@ -30,31 +31,29 @@ app.use(logger);
 // })
 
 app.post('/data/', (request, response) => {
-    let mods = new model()
+    //let mods = new model()
     const data = request.body;
+    let mods = [];
     
-    for(let item in data['businesses']){
-        mods.name = item['name'];
-        mods.price = item['price'];
-        mods.rating = item['rating'];
-        mods.review_count = item['review_count'];
-        mods.url = item['url'];
-        mods.image = [item['image_url']];
-        mods.display_phone = item['display_phone'];
-        mods.display_address = item['display_address'];
-        let check = [mods.name, mods.url,mods.rating]
-        db.collection("datas").insertMany(check, (err) => {
-            if (err) throw err;
-            console.log("success it works")
-        })
+    for (let item of data['businesses']) {
+        // mods.name = item['name'];
+        // mods.price = item['price'];
+        // mods.rating = item['rating'];
+        // mods.review_count = item['review_count'];
+        // mods.url = item['url'];
+        // mods.image = item['image_url'];
+        // mods.display_phone = item['display_phone'];
+        // mods.display_address = item['display_address'];
+        mods.push(item);
+
 
     }
 
+    db.collection("datas").insertMany(mods, (err) => {
+        if (err) throw err;
+        console.log("success it works")
+    })
 
-    // db.collection("datas").insertOne(mods, (err) => {
-    //     if (err) throw err;
-    //     console.log("success it works")
-    // })
 });
 
 
