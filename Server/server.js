@@ -8,6 +8,7 @@ app.use(express.json());
 
 
 
+
 const model = require("../Model/model.js")
 
 /////////////////////////////////////////////
@@ -20,33 +21,21 @@ app.use(logger);
 /////////////////////////////////////////////
 
 
-// app.get("/", (request, response) => {
-//     let modelLay = new model()
+app.get("/", (request, response) => {
+    db.collection('datas')
+        .aggregate([{ $sample: { size: 1 } }])
+        .toArray((err, results) => {
+            if (err) throw err;
+            response.json(results);
+            
+        });
+})
 
-//     modelLay.name  = "Simon"
-//     db.collection("datas").insertOne(modelLay,(err)=>{
-//         if (err) throw err;
-//         response.send("success")
-//     })
-// })
-
-app.post('/data/', (request, response) => {
-    //let mods = new model()
+app.post('/data/', (request) => {
     const data = request.body;
     let mods = [];
-    
     for (let item of data['businesses']) {
-        // mods.name = item['name'];
-        // mods.price = item['price'];
-        // mods.rating = item['rating'];
-        // mods.review_count = item['review_count'];
-        // mods.url = item['url'];
-        // mods.image = item['image_url'];
-        // mods.display_phone = item['display_phone'];
-        // mods.display_address = item['display_address'];
         mods.push(item);
-
-
     }
 
     db.collection("datas").insertMany(mods, (err) => {
@@ -55,6 +44,8 @@ app.post('/data/', (request, response) => {
     })
 
 });
+
+
 
 
 
