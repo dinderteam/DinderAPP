@@ -17,6 +17,7 @@
     "react-native-dropdown-menu": "^2.0.0",
     "react-native-image-view": "^2.1.2",
     "react-native-swipe-gestures": "^1.0.3",
+    "react-navigation": "^3.0.8",
     "superagent": "^4.0.0"
   },
   "devDependencies": {

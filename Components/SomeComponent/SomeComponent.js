@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { View, Text, Image, StyleSheet } from 'react-native';
+import { Image, StyleSheet } from 'react-native';
 import GestureRecognizer, { swipeDirections } from 'react-native-swipe-gestures';
 
-class SomeComponent extends Component {
+class ImgSwipe extends Component {
         
         
 
@@ -63,7 +63,6 @@ class SomeComponent extends Component {
                 onSwipeRight={() => this.onSwipeRight()}
                 config={config}   
             >
-
                 <Image style={styles.position} source={{ uri: this.props.currentImage }} /> 
             </GestureRecognizer>
             
@@ -72,10 +71,10 @@ class SomeComponent extends Component {
 }
 const styles = StyleSheet.create({
     position: {
-        width: 450,
-        height: 450,
-        
+        width: 375,
+        height: 450,  
     }
+
 });
 
-export default SomeComponent;
+export default ImgSwipe;
