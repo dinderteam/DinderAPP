@@ -84,22 +84,28 @@ export default class HomePage extends React.Component {
             this.onSwipeChange()
 
         }
-
+    }
+    static navigationOptions = {
+        title: 'DINDER',
+        headerStyle: {
+            backgroundColor: '#f4511e',
+        }
     }
 
     render() {
-
+    
         let currentImageMarker = this.state.currentImage;
         if (this.state.currentImage) {
             currentImageMarker = this.state.currentImage
         }
+    
 
         return (
 
             <View style={styles.mainContainer}>
-                <View style={styles.labelContainer}>
+                {/* <View style={styles.labelContainer}>
                     <Text style={styles.label}> DINDER </Text>
-                </View>
+                </View> */}
 
                 <View style={styles.restName}>
                     <Text style={styles.label}>{"Name:" + this.state.currentName}</Text>

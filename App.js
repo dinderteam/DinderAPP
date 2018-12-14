@@ -1,11 +1,16 @@
 import React from "react";
+import { StyleSheet} from 'react-native';
 import { createStackNavigator, createAppContainer } from "react-navigation";
-import HomeScreen from "./Pages/HomePage.js"
+import IntroFilter from "./Pages/IntroFilter.js"
+import HomePage from "./Pages/HomePage.js";
 
 
 const AppNavigator = createStackNavigator({
  Home: {
-    screen: HomeScreen,
+   screen: IntroFilter,
+  },
+  Main:{
+    screen: HomePage,
   },
 },
   {
