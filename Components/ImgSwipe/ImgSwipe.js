@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Image, StyleSheet } from 'react-native';
+import { Text,Image, StyleSheet } from 'react-native';
 import GestureRecognizer, { swipeDirections } from 'react-native-swipe-gestures';
 
 class ImgSwipe extends Component {
@@ -18,7 +18,6 @@ class ImgSwipe extends Component {
 
     onSwipeRight(gestureState) {
         console.log("right!!!!!!!!!!!")
-        
     }
 
 
@@ -63,6 +62,7 @@ class ImgSwipe extends Component {
             >
                 <Image style={styles.position} source={{ uri: this.props.currentImage }} /> 
             </GestureRecognizer>
+            
             
         );
     }
