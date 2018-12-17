@@ -1,5 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View, Button, } from 'react-native';
+import Dropdowns from "../Components/DropDown/DropDown.js"
+
 
 
 export default class IntroFilter extends React.Component {
@@ -63,12 +65,15 @@ export default class IntroFilter extends React.Component {
         
         return (
             <View>
-                <Text>Checking</Text>
+                <Text>This is where the dropdown will go</Text>
+                <Text>{this.state.longitude}</Text>
+                <Text>{this.state.latitude}</Text>
                 <Button
                     title="Main page"
                     onPress={() => this.passingGeolocation()}
                     onPress={() => navigate('Main')}
                 />
+                <Dropdowns />
             </View>
         );
     }
