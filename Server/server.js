@@ -15,6 +15,7 @@ function logger(req, res, next) {
 app.use(logger);
 /////////////////////////////////////////////
 
+// grabs random data from from mlab data base
 
 app.get("/", (request, response) => {
     db.collection('datas')
@@ -24,12 +25,14 @@ app.get("/", (request, response) => {
             response.json(results);
             
         });
-})
+});
 
+//adds data to mlab db
 app.post('/data/', (request) => {
     const data = request.body;
     let mods = [];
     for (let item of data['businesses']) {
+        item.liked = false;
         mods.push(item);
     }
 
@@ -38,6 +41,28 @@ app.post('/data/', (request) => {
         console.log("success it works")
     })
 
+});
+
+//updates db for items swiped right(good)
+app.post("/change/",(request,response)=>{
+    console.log("are you entering?")
+    let info = request.body;
+    let idString = info['id']; 
+    //console.log("checking",info['id'])
+    db.collection("datas").update({"id":idString}, {$set:{"liked":true}})
+    console.log("finished!")
+    response.json("this is to end the post")
+
+})
+
+app.get("/truevalues/",(request,response)=>{
+    db.collection('datas')
+        .find({"liked":true })
+        .toArray((err, results) => {
+            if (err) throw err;
+            response.json(results);
+
+        });
 });
 
 

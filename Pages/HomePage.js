@@ -6,6 +6,7 @@ import ImgSwipe from "../Components/ImgSwipe/ImgSwipe.js"
 export default class HomePage extends React.Component {
     state = {
         swipeState: null,
+        currentId:null,
         currentName: null,
         currentImage: 'https://i1.wp.com/www.foot.com/wp-content/uploads/2017/03/placeholder.gif?ssl=1',
         currentPrice: null,
@@ -14,13 +15,31 @@ export default class HomePage extends React.Component {
         currentAddress: null,
         currentUrl: null,
         currentReview: null,
+        liked: false,
     }
 
-    componentDidMount() {
+    componentWillMount() {
         // var { height, width } = Dimensions.get('window');
         // console.log(height)
         // console.log(width)
         this.onSwipeChange()
+    }
+   
+    turningTrue=()=>{
+        let idVal = {
+            id:this.state.currentId
+        }
+        console.log("sumthin")
+        fetch('http://localhost:8080/change/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(idVal),
+        })
+        .then(response => response.json())
+        // .then(info => {
+        //     console.log('Got this back', this.state.currentId);
+        // })
+        .catch((error) => { console.warn("Unable to change") })
     }
 
 
@@ -33,6 +52,7 @@ export default class HomePage extends React.Component {
             .then(result => {
 
                 this.setState({
+                    currentId: result[0]["id"],
                     currentName: result[0]['name'],
                     currentImage: result[0]['image_url'],
                     currentPrice: result[0]['price'],
@@ -52,11 +72,26 @@ export default class HomePage extends React.Component {
 
         if (direction === "SWIPE_LEFT") {
             this.onSwipeChange()
+            this.allTrues()
 
         } else if (direction === "SWIPE_RIGHT") {
+            this.turningTrue()
             this.onSwipeChange()
+            
 
         }
+    }
+
+    allTrues=()=> {
+        fetch('http://localhost:8080/truevalues/', {
+            method: "GET",
+            headers: { 'Content-Type': 'application/json' },
+        })
+            .then(Response => Response.json())
+            .then(result => {
+                console.log("checking if the array is passed back", result)
+            })
+        
     }
 
 
