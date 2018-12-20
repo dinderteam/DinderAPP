@@ -16,7 +16,7 @@ export default class HomePage extends React.Component {
         currentReview: null,
     }
 
-    componentWillMount() {
+    componentDidMount() {
         // var { height, width } = Dimensions.get('window');
         // console.log(height)
         // console.log(width)
@@ -74,23 +74,19 @@ export default class HomePage extends React.Component {
             currentImageMarker = this.state.currentImage
         }
     
-
         return (
 
             <View style={styles.mainContainer}>
-                {/* <View style={styles.labelContainer}>
-                    <Text style={styles.label}> DINDER </Text>
-                </View> */}
-
+               
                 <View style={styles.restName}>
-                    <Text style={styles.label}>{"Name:" + this.state.currentName}</Text>
+                    <Text style={styles.label}>{this.state.currentName}</Text>
                 </View>
 
                 <View style={styles.imgContainer}>
 
                     <View style={styles.dataView}>
-                        <Text style={styles.price}>{"Price:" + this.state.currentPrice}</Text>
-                        <Text style={styles.rating}>{"Rating:" + this.state.currentRating}</Text>
+                        <Text style={styles.price}>{this.state.currentPrice}</Text>
+                        <Text style={styles.rating}>{this.state.currentRating}</Text>
                     </View>
 
                     <View>
@@ -133,10 +129,12 @@ const styles = StyleSheet.create({
     },
     price: {
         flex: 1,
-        textAlign: "left",
+        textAlign: "left", 
+        fontSize: 16,
     },
     rating: {
         flex: 1,
         textAlign: "right",
+        fontSize: 16,
     }
 });

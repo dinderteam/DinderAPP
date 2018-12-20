@@ -3,7 +3,7 @@ import ModalDropdown from 'react-native-modal-dropdown';
 import { StyleSheet } from 'react-native';
 
 export default class DropDownCity extends Component {
-    handler = (e, type)=>{
+    handler = (key, type)=>{
         this.props.updateChange(type)
     }
     render() {
