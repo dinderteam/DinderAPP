@@ -6,11 +6,6 @@ const app = express();
 app.use(express.json());
 
 
-
-
-
-const model = require("../Model/model.js")
-
 /////////////////////////////////////////////
 // Logger & configuration
 function logger(req, res, next) {
