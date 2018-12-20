@@ -38,12 +38,9 @@ class SomeComponent extends Component {
             case SWIPE_DOWN:
                 break;
             case SWIPE_LEFT:
-                console.log("something-new")
-                // console.log(gestureState)
                 this.handleLangChange(gestureName)
                 break;
             case SWIPE_RIGHT:
-                console.log("i guess so ")
                 this.handleLangChange(gestureName)
                 break;
         }
