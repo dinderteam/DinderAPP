@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View, Dimensions } from 'react-native';
 import ImgSwipe from "../Components/ImgSwipe/ImgSwipe.js"
-import IntroFilter from "./IntroFilter.js";
+//import IntroFilter from "./IntroFilter.js";
 
 export default class HomePage extends React.Component {
     state = {
@@ -17,40 +17,12 @@ export default class HomePage extends React.Component {
     }
 
     componentWillMount() {
-        var { height, width } = Dimensions.get('window');
-        console.log(height)
-        console.log(width)
+        // var { height, width } = Dimensions.get('window');
+        // console.log(height)
+        // console.log(width)
+        this.onSwipeChange()
     }
 
-    componentDidMount() {
-        // fetch("https://api.yelp.com/v3/businesses/search?term=food&radius=16093&location=oakland", {
-        //     method: "GET",
-        //     headers: new Headers({
-        //         "Content-type": "application/json",
-        //         'Authorization': ' Bearer ' + "EgNHeojg_ryrKUYzlgCaPMXU7i60GOR-Yy1qxnoYvIDNM8OEq1bfq1a5cbuiExw94-oDF86cKIGfZI73iQoXsxZYndshHdSCeqUMjCi1C-KqdY1jA2Rkw5O4OQWwWnYx",
-        //     }),
-
-        // })
-        //     .then(response => response.json())
-        //     .then(info => {
-        //         this.pushIntoDB(info);
-        //     })
-        //     .catch((error) => { console.warn("Unable to connect to network.") })
-    }
-
-    // pushIntoDB = (info) => {
-
-    //     fetch('http://localhost:8080/data/', {
-    //         method: 'POST',
-    //         headers: { 'Content-Type': 'application/json' },
-    //         body: JSON.stringify(info),
-    //     })
-    //         .then(response => response.json())
-    //         .then(data => {
-    //             console.log('Got this back', data);
-    //         })
-    //         .catch((error) => { console.warn("Unable to push to DB") })
-    // }
 
     onSwipeChange = () => {
         fetch('http://localhost:8080/', {
@@ -87,7 +59,6 @@ export default class HomePage extends React.Component {
         }
     }
 
-   
 
     static navigationOptions = {
         title: 'DINDER',

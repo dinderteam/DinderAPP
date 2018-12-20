@@ -71,6 +71,7 @@ const styles = StyleSheet.create({
     position: {
         width: 375,
         height: 450,  
+        backgroundColor: "red",
     }
 
 });

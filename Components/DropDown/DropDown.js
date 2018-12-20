@@ -1,21 +1,33 @@
 import React, { Component } from 'react';
-import { Dropdown } from 'react-native-material-dropdown';
+import ModalDropdown from 'react-native-modal-dropdown';
+import { StyleSheet } from 'react-native';
 
-export default class Dropdown extends Component {
-    render() {
-        let data = [{
-            value: 'Banana',
-        }, {
-            value: 'Mango',
-        }, {
-            value: 'Pear',
-        }];
-
-        return (
-            <Dropdown
-                label='Favorite Fruit'
-                data={data}
-            />
+export default class DropDownFood  extends  Component {
+    handler = (e, type) => {
+        this.props.updateChange(type)
+    }
+    render(){
+        return(
+            <ModalDropdown
+                options={['Burgers', 'Chinese', 'Italian', 'Thai', 'Japanese', 'Mexican ']}
+                onSelect={this.handler} 
+                dropdownTextStyle={{ fontSize: 30}}
+                defaultValue={'Food Type'}
+                textStyle={styles.textBeh}
+           />
         );
     }
 }
+const styles = StyleSheet.create({
+    textBeh: {
+        fontSize: 25,
+        width: 375,
+        textAlign: "center",
+        
+
+    },
+
+});
+
+
+

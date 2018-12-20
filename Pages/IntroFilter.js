@@ -1,18 +1,36 @@
 import React from "react";
 import { StyleSheet, Text, View, Button, } from 'react-native';
-import Dropdowns from "../Components/DropDown/DropDown.js"
+import DropDownFood  from "../Components/DropDown/DropDown.js"
+import DropDownCity from "../Components/DropDownCity/DropDownCity.js"
 
-
+console.disableYellowBox = true
 
 export default class IntroFilter extends React.Component {
+
 
     state = {
         longitude: null,
         latitude:null,
+        city:null,
+        foodtype:null,
     }
-   
+
     componentDidMount(){
-        fetch("https://api.yelp.com/v3/businesses/search?term=food&radius=16093&location=oakland", {
+        navigator.geolocation.getCurrentPosition(
+            location => {
+                this.setState({
+                    longitude: location.coords.longitude,
+                    latitude: location.coords.latitude,
+                });
+            });
+    
+    }
+
+    setUp = () => {
+        
+        let url = "https:api.yelp.com/v3/businesses/search?term=food&radius=16093&location=" + this.state.city + "&categories=" + this.state.foodtype.toLowerCase();
+
+        fetch(url, {
             method: "GET",
             headers: new Headers({
                 "Content-type": "application/json",
@@ -22,24 +40,22 @@ export default class IntroFilter extends React.Component {
         })
             .then(response => response.json())
             .then(info => {
-                this.pushIntoDB(info);
+                this.pushIntoDB(info)
             })
-            .catch((error) => { console.warn("Unable to connect to network.") })
 
-       this.passingGeolocation()
-    }
+    };
 
-    pushIntoDB = (info) => {
-
+    pushIntoDB = (info) => {    
+          console.log("checking", info)
         fetch('http://localhost:8080/data/', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(info),
         })
             .then(response => response.json())
-            .then(data => {
-                console.log('Got this back', data);
-            })
+             .then(info => {
+                 console.log('Got this back', info);
+             })
             .catch((error) => { console.warn("Unable to push to DB") })
     }
 
@@ -49,31 +65,41 @@ export default class IntroFilter extends React.Component {
             backgroundColor: '#f4511e',
         }
     }
-   
-    passingGeolocation = () => {
-        navigator.geolocation.getCurrentPosition(
-            location => {
-                this.setState({
-                    longitude: location.coords.longitude,
-                    latitude: location.coords.latitude,
-                }); 
-            });
 
+    handleCity = (city) => {
+        console.log(city)
+        this.setState({
+            city:city
+        });
     }
+
+    handleFood = (food) =>{
+        console.log(food)
+        this.setState({
+            foodtype: food
+        });
+    }
+
     render() {
         const { navigate } = this.props.navigation;
         
         return (
-            <View>
-                <Text>This is where the dropdown will go</Text>
-                <Text>{this.state.longitude}</Text>
-                <Text>{this.state.latitude}</Text>
+            <View style={styles.mainContainer}>
+                <View style={styles.dropdownBeh}>
+                    <DropDownCity updateChange={this.handleCity}/>
+                </View>
+                <View style={styles.buttonBeh}>
+                    <DropDownFood  updateChange={this.handleFood}/>
+                </View>
                 <Button
-                    title="Main page"
-                    onPress={() => this.passingGeolocation()}
-                    onPress={() => navigate('Main')}
-                />
-                <Dropdowns />
+                    title="Submit"
+                    onPress={() => {
+                        this.setUp();
+                        navigate('Main');
+                    }
+                    }
+                    />
+                
             </View>
         );
     }
@@ -82,5 +108,17 @@ export default class IntroFilter extends React.Component {
 const styles = StyleSheet.create({
     mainContainer: {
         flex: 1,
+        justifyContent: "center",
+        alignContent: "center",
+        backgroundColor: "whitesmoke"
     },
+    dropdownBeh:{
+       marginTop: -100,
+       marginBottom: 50,
+    },
+    buttonBeh:{
+        marginBottom: 50,
+    }
+
+    
 });
