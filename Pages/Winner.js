@@ -8,7 +8,7 @@ export default class Winner extends React.Component {
         winningImage: null,
     }
     componentWillMount(){
-        this.allTrues()
+        
     }
 
     allTrues = () => {
@@ -19,22 +19,34 @@ export default class Winner extends React.Component {
             .then(Response => Response.json())
             .then(result => {
                 console.log("checking if the array is passed back", result)
+                
+                this.state({
+                    winningName: result[0]['name'],
+                    winningImage: result[0]['image_url'],
+                })
             })
 
-            this.state({
-                winningName:result[0]['name'],
-                winningImage:result[0]['image_url'],
-            })
+            
 
     }
 
-   
+    static navigationOptions = {
+        title: "WINNER",
+        headerStyle: {
+            backgroundColor: '#f4511e',
+        }
+    }
+
     render() {
         const { navigate } = this.props.navigation;
+        this.allTrues()
         
         return (
             <View style={styles.mainContainer}>
-                
+                <Button
+                    title="main"
+                    onPress={() => { navigate('Main') }}
+                />
 
             </View>
         );

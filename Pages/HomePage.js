@@ -101,7 +101,8 @@ export default class HomePage extends React.Component {
     }
 
     render() {
-    
+        const { navigate } = this.props.navigation;
+        
         let currentImageMarker = this.state.currentImage;
         if (this.state.currentImage) {
             currentImageMarker = this.state.currentImage
@@ -124,6 +125,10 @@ export default class HomePage extends React.Component {
 
                     <View>
                         <ImgSwipe currentImage={currentImageMarker} updateChange={this.onChangeHandler} />
+                        <Button
+                            title="Submit"
+                            onPress={() => {navigate('Winnerpage')}}
+                        />
                     </View>
 
                 </View>
