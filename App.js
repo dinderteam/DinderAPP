@@ -3,7 +3,7 @@ import { StyleSheet} from 'react-native';
 import { createStackNavigator, createAppContainer } from "react-navigation";
 import IntroFilter from "./Pages/IntroFilter.js"
 import HomePage from "./Pages/HomePage.js";
-
+import Winner from "./Pages/Winner.js";
 
 const AppNavigator = createStackNavigator({
  Home: {
@@ -11,6 +11,9 @@ const AppNavigator = createStackNavigator({
   },
   Main:{
     screen: HomePage,
+  },
+  Winnerpage:{
+    screen: Winner,
   },
 },
   {

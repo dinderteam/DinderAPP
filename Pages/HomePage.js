@@ -1,10 +1,11 @@
 import React from "react";
-import { StyleSheet, Text, View, Dimensions } from 'react-native';
+import { StyleSheet, Text, View, Dimensions,Button } from 'react-native';
 import ImgSwipe from "../Components/ImgSwipe/ImgSwipe.js"
 //import IntroFilter from "./IntroFilter.js";
 
 export default class HomePage extends React.Component {
     state = {
+        count:0,
         swipeState: null,
         currentId:null,
         currentName: null,
@@ -19,9 +20,7 @@ export default class HomePage extends React.Component {
     }
 
     componentWillMount() {
-        // var { height, width } = Dimensions.get('window');
-        // console.log(height)
-        // console.log(width)
+       
         this.onSwipeChange()
     }
    
@@ -29,16 +28,12 @@ export default class HomePage extends React.Component {
         let idVal = {
             id:this.state.currentId
         }
-        console.log("sumthin")
         fetch('http://localhost:8080/change/', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(idVal),
         })
         .then(response => response.json())
-        // .then(info => {
-        //     console.log('Got this back', this.state.currentId);
-        // })
         .catch((error) => { console.warn("Unable to change") })
     }
 
@@ -52,6 +47,7 @@ export default class HomePage extends React.Component {
             .then(result => {
 
                 this.setState({
+                    count:this.state.count+1,
                     currentId: result[0]["id"],
                     currentName: result[0]['name'],
                     currentImage: result[0]['image_url'],
@@ -68,31 +64,33 @@ export default class HomePage extends React.Component {
     }
 
 
-    onChangeHandler = (direction) => {
+    onChangeHandler = (direction,navigate) => {
 
         if (direction === "SWIPE_LEFT") {
             this.onSwipeChange()
-            this.allTrues()
 
         } else if (direction === "SWIPE_RIGHT") {
             this.turningTrue()
             this.onSwipeChange()
+            if (this.state.count === 2) {
+                console.log(this.state.count)
+            }
             
 
         }
     }
 
-    allTrues=()=> {
-        fetch('http://localhost:8080/truevalues/', {
-            method: "GET",
-            headers: { 'Content-Type': 'application/json' },
-        })
-            .then(Response => Response.json())
-            .then(result => {
-                console.log("checking if the array is passed back", result)
-            })
+    // allTrues=()=> {
+    //     fetch('http://localhost:8080/truevalues/', {
+    //         method: "GET",
+    //         headers: { 'Content-Type': 'application/json' },
+    //     })
+    //         .then(Response => Response.json())
+    //         .then(result => {
+    //             console.log("checking if the array is passed back", result)
+    //         })
         
-    }
+    // }
 
 
     static navigationOptions = {

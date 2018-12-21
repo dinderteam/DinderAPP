@@ -5,6 +5,9 @@ const MongoClient = require('mongodb').MongoClient;
 const app = express();
 app.use(express.json());
 
+//const session = require('express-session');
+
+
 
 /////////////////////////////////////////////
 // Logger & configuration
@@ -22,17 +25,19 @@ app.get("/", (request, response) => {
         .aggregate([{ $sample: { size: 1 } }])
         .toArray((err, results) => {
             if (err) throw err;
-            response.json(results);
-            
+            response.json(results);   
         });
 });
 
+
 //adds data to mlab db
 app.post('/data/', (request) => {
+   
     const data = request.body;
     let mods = [];
     for (let item of data['businesses']) {
         item.liked = false;
+        item.session = false
         mods.push(item);
     }
 
@@ -48,16 +53,19 @@ app.post("/change/",(request,response)=>{
     console.log("are you entering?")
     let info = request.body;
     let idString = info['id']; 
-    //console.log("checking",info['id'])
     db.collection("datas").update({"id":idString}, {$set:{"liked":true}})
     console.log("finished!")
     response.json("this is to end the post")
 
 })
-
+// return list of all items with liked == true
 app.get("/truevalues/",(request,response)=>{
     db.collection('datas')
-        .find({"liked":true })
+        //.find({"liked":true })
+        .aggregate([
+            {$sample: { size: 1 } },
+            {$match: { "liked": true }}
+        ])
         .toArray((err, results) => {
             if (err) throw err;
             response.json(results);
