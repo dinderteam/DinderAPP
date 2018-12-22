@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View, Button, ImageBackground, } from 'react-native';
+import { StyleSheet, Text, View, Button, ImageBackground } from 'react-native';
 import DropDownFood from "../Components/DropDown/DropDown.js"
 import DropDownCity from "../Components/DropDownCity/DropDownCity.js"
 
@@ -94,7 +94,7 @@ export default class IntroFilter extends React.Component {
         return (
             <View style={styles.mainContainer}>
 
-                <ImageBackground source={{ "uri": "file:///Users/sloop/Desktop/dinder/DinderAPP/Components/images/bridge.jpg" }} style={{ width: '100%', height: '100%' }}>
+                <ImageBackground source={require('../Components/images/bridge.jpg')} style={{ width: '100%', height: '100%' }}>
                     <View style={styles.organize}>
 
                         <Text style={styles.summary}>Find your next favorite resataurant with Dinder.</Text>

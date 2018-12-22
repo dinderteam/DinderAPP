@@ -61,7 +61,7 @@ export default class Winner extends React.Component {
 
         return (
             <View style={styles.mainContainer}>
-                <ImageBackground source={{ "uri": "file:///Users/sloop/Desktop/dinder/DinderAPP/Components/images/bridge.jpg" }} style={{ width: '100%', height: '100%' }}>
+                <ImageBackground source={require('../Components/images/bridge.jpg')} style={{ width: '100%', height: '100%' }}>
                     <View style={styles.Name}>
                         <Text style={styles.label}>{this.state.winningName}</Text>
                     </View>

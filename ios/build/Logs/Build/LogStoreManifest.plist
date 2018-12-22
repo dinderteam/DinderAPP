@@ -6,7 +6,7 @@
 	<integer>9</integer>
 	<key>logs</key>
 	<dict>
-		<key>44BC42B8-B03E-4BBB-B18F-27521F930337</key>
+		<key>8F620504-38F9-4542-AF0B-4D9A1D8ED686</key>
 		<dict>
 			<key>className</key>
 			<string>IDECommandLineBuildLog</string>
@@ -15,7 +15,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>44BC42B8-B03E-4BBB-B18F-27521F930337.xcactivitylog</string>
+			<string>8F620504-38F9-4542-AF0B-4D9A1D8ED686.xcactivitylog</string>
 			<key>highLevelStatus</key>
 			<string>E</string>
 			<key>schemeIdentifier-containerName</key>
@@ -27,15 +27,15 @@
 			<key>signature</key>
 			<string>Building project DINDER with scheme DINDER and configuration Debug</string>
 			<key>timeStartedRecording</key>
-			<real>567120620.07316506</real>
+			<real>567202736.90781701</real>
 			<key>timeStoppedRecording</key>
-			<real>567120621.24456203</real>
+			<real>567202739.88461101</real>
 			<key>title</key>
 			<string>Building project DINDER with scheme DINDER and configuration Debug</string>
 			<key>uniqueIdentifier</key>
-			<string>44BC42B8-B03E-4BBB-B18F-27521F930337</string>
+			<string>8F620504-38F9-4542-AF0B-4D9A1D8ED686</string>
 		</dict>
-		<key>EE9E0993-9AAC-48A0-8053-9AB1E18B9AEC</key>
+		<key>C3DA660D-6C2A-45C8-BB52-2F6BFBA6193A</key>
 		<dict>
 			<key>className</key>
 			<string>IDECommandLineBuildLog</string>
@@ -44,7 +44,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>EE9E0993-9AAC-48A0-8053-9AB1E18B9AEC.xcactivitylog</string>
+			<string>C3DA660D-6C2A-45C8-BB52-2F6BFBA6193A.xcactivitylog</string>
 			<key>highLevelStatus</key>
 			<string>E</string>
 			<key>schemeIdentifier-containerName</key>
@@ -56,13 +56,13 @@
 			<key>signature</key>
 			<string>Building project DINDER with scheme DINDER and configuration Debug</string>
 			<key>timeStartedRecording</key>
-			<real>567120557.90335298</real>
+			<real>567133767.88242102</real>
 			<key>timeStoppedRecording</key>
-			<real>567120559.22439206</real>
+			<real>567133770.23166096</real>
 			<key>title</key>
 			<string>Building project DINDER with scheme DINDER and configuration Debug</string>
 			<key>uniqueIdentifier</key>
-			<string>EE9E0993-9AAC-48A0-8053-9AB1E18B9AEC</string>
+			<string>C3DA660D-6C2A-45C8-BB52-2F6BFBA6193A</string>
 		</dict>
 	</dict>
 </dict>

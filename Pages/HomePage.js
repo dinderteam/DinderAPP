@@ -9,8 +9,7 @@ export default class HomePage extends React.Component {
         swipeState: null,
         currentId: null,
         currentName: null,
-        currentImage: 'file:///Users/sloop/Desktop/dinder/DinderAPP/Components/images/hands.jpg',
-        currentPrice: null,
+        currentImage: 'https://i.imgur.com/d2BjT6D.jpg',
         currentRating: null,
         currentphone: null,
         currentAddress: null,
@@ -108,7 +107,7 @@ export default class HomePage extends React.Component {
         return (
 
             <View style={styles.mainContainer}>
-                <ImageBackground source={{ "uri": "file:///Users/sloop/Desktop/dinder/DinderAPP/Components/images/bridge.jpg" }} style={{ width: '100%', height: '100%' }}>
+                <ImageBackground source={require('../Components/images/bridge.jpg')} style={{ width: '100%', height: '100%' }}>
                     <View style={styles.Name}>
                         <Text style={styles.label}>{this.state.currentName}</Text>
                     </View>
