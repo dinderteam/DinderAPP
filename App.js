@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 import { createStackNavigator, createAppContainer } from "react-navigation";
 import IntroFilter from "./Pages/IntroFilter.js";
 import HomePage from "./Pages/HomePage.js";
-
+import Winner from "./Pages/Winner.js";
 
 // import DropdownFood from "./Components/DropdownFood/DropdownFood.js"
 // import DropDownCity from "./Components/DropdownCity/DropdownCity.js"
@@ -20,11 +20,16 @@ console.disableYellowBox = true;
     Main: {
       screen: HomePage,
     },
+  
+  Winnerpage:{
+    screen: Winner,
   },
-    {
-      initialRouteName: 'Home',
-    }
-  );
+},
+  {
+    initialRouteName: 'Home',
+  }
+
+);
 
 
   const AppContainer = createAppContainer(AppNavigator);

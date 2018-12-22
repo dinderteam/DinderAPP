@@ -1,26 +1,40 @@
 import React from "react";
-import { StyleSheet, Text, View, Dimensions } from 'react-native';
+import { StyleSheet, Text, View, Dimensions, Button, ImageBackground } from 'react-native';
 import ImgSwipe from "../Components/ImgSwipe/ImgSwipe.js"
-//import IntroFilter from "./IntroFilter.js";
 
 export default class HomePage extends React.Component {
     state = {
+        show:false,
+        count: 0,
         swipeState: null,
+        currentId: null,
         currentName: null,
-        currentImage: 'https://i1.wp.com/www.foot.com/wp-content/uploads/2017/03/placeholder.gif?ssl=1',
+        currentImage: 'file:///Users/sloop/Desktop/dinder/DinderAPP/Components/images/hands.jpg',
         currentPrice: null,
         currentRating: null,
         currentphone: null,
         currentAddress: null,
         currentUrl: null,
         currentReview: null,
+        liked: false,
     }
 
-    componentDidMount() {
-        // var { height, width } = Dimensions.get('window');
-        // console.log(height)
-        // console.log(width)
+    componentWillMount() {
+
         this.onSwipeChange()
+    }
+
+    turningTrue = () => {
+        let idVal = {
+            id: this.state.currentId
+        }
+        fetch('http://localhost:8080/change/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(idVal),
+        })
+            .then(response => response.json())
+            .catch((error) => { console.warn("Unable to change") })
     }
 
 
@@ -33,6 +47,8 @@ export default class HomePage extends React.Component {
             .then(result => {
 
                 this.setState({
+                    count: this.state.count + 1,
+                    currentId: result[0]["id"],
                     currentName: result[0]['name'],
                     currentImage: result[0]['image_url'],
                     currentPrice: result[0]['price'],
@@ -48,13 +64,20 @@ export default class HomePage extends React.Component {
     }
 
 
-    onChangeHandler = (direction) => {
+    onChangeHandler = (direction, navigate) => {
 
         if (direction === "SWIPE_LEFT") {
             this.onSwipeChange()
 
         } else if (direction === "SWIPE_RIGHT") {
+            this.turningTrue()
             this.onSwipeChange()
+            if (this.state.count > 2) {
+                this.setState({
+                    show:true
+                })
+            }
+
 
         }
     }
@@ -63,37 +86,56 @@ export default class HomePage extends React.Component {
     static navigationOptions = {
         title: 'DINDER',
         headerStyle: {
-            backgroundColor: '#f4511e',
-        }
+            backgroundColor: "#ef21c9",
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+            fontWeight: 'bold',
+            fontSize: 30,
+            fontFamily: "Cochin",
+
+        },
     }
 
     render() {
-    
+        const { navigate } = this.props.navigation;
+
         let currentImageMarker = this.state.currentImage;
         if (this.state.currentImage) {
             currentImageMarker = this.state.currentImage
         }
-    
+
         return (
 
             <View style={styles.mainContainer}>
-               
-                <View style={styles.restName}>
-                    <Text style={styles.label}>{this.state.currentName}</Text>
-                </View>
-
-                <View style={styles.imgContainer}>
-
-                    <View style={styles.dataView}>
-                        <Text style={styles.price}>{this.state.currentPrice}</Text>
-                        <Text style={styles.rating}>{this.state.currentRating}</Text>
+                <ImageBackground source={{ "uri": "file:///Users/sloop/Desktop/dinder/DinderAPP/Components/images/bridge.jpg" }} style={{ width: '100%', height: '100%' }}>
+                    <View style={styles.Name}>
+                        <Text style={styles.label}>{this.state.currentName}</Text>
                     </View>
 
-                    <View>
-                        <ImgSwipe currentImage={currentImageMarker} updateChange={this.onChangeHandler} />
-                    </View>
+                    <View style={styles.imgContainer}>
 
-                </View>
+                        <View style={styles.dataView}>
+                            <Text style={styles.price}>Price:{this.state.currentPrice}</Text>
+                            <Text style={styles.rating}>Rating:{this.state.currentRating}</Text>
+                        </View>
+
+                       
+                        <View style={styles.imageborder}>
+                            <ImgSwipe currentImage={currentImageMarker} updateChange={this.onChangeHandler} />
+                            </View>
+                            <View style={styles.submit}>
+                            <Button
+                            color="white"
+                                title="Winner"
+                                onPress={() => { navigate('Winnerpage') }}
+                                disabled={!this.state.show}
+                                
+                            />
+                        </View>
+
+                    </View>
+                </ImageBackground>
             </View>
         );
     }
@@ -102,23 +144,24 @@ export default class HomePage extends React.Component {
 const styles = StyleSheet.create({
     mainContainer: {
         flex: 1,
+        justifyContent:"space-evenly"
     },
-    labelContainer: {
-        flex: 1,
-        flexDirection: "column",
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: "red",
-    },
+  
     label: {
         fontSize: 36,
         textAlign: "center",
+        fontFamily: "Cochin",
+        color:"white",
+        textDecorationLine: 'underline',
+        fontWeight:"bold"
+
 
     },
-    restName: {
+    Name: {
         marginTop: 10,
         marginBottom: 10,
         flexDirection: "column",
+
     },
     dataView: {
         flexDirection: "row",
@@ -129,12 +172,35 @@ const styles = StyleSheet.create({
     },
     price: {
         flex: 1,
-        textAlign: "left", 
-        fontSize: 16,
+        textAlign: "left",
+        fontSize: 30,
+        fontFamily:"Cochin",
+        color:"white",
+        fontWeight:"bold"
+
     },
     rating: {
         flex: 1,
         textAlign: "right",
-        fontSize: 16,
-    }
+        fontSize: 30,
+        fontFamily:"Cochin",
+        color:"white",
+        fontWeight:"bold"
+    },
+    imageborder:{
+        borderRadius: 4,
+        borderWidth: 15,
+        borderColor: 'black',
+
+    },
+    submit: {
+        backgroundColor: "#ef21c9",
+        fontWeight: "bold",
+        width: 100,
+        textAlign: "center",
+        marginLeft: "auto",
+        marginRight: "auto",
+        borderRadius:90,
+        
+    },
 });

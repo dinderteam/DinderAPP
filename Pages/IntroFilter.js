@@ -46,11 +46,12 @@ export default class IntroFilter extends React.Component {
     };
 
     pushIntoDB = (info) => {
-        console.log("checking", info)
+     
         fetch('http://localhost:8080/data/', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(info),
+        
         })
             .then(response => response.json())
             .then(info => {
@@ -132,28 +133,19 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'column',
         justifyContent: "space-between",
-        // alignContent: "center",
-        // backgroundColor: "whitesmoke",
+     
 
     },
     dropdownBeh: {
-        // marginTop: -100,
-        // marginBottom: 50,
-        // top: 32,
-        // alignContent: 'center',
+        
         left: 0,
-        // backgroundColor: '#4286f4',
         textAlign: 'center',
         marginLeft: "auto",
         marginRight: "auto",
 
     },
     buttonBeh: {
-        // marginBottom: 10,
-        // top: 32,
-        // alignContent: 'center',
         left: 0,
-        // backgroundColor: '#4286f4',
         textAlign: 'center',
         marginLeft: "auto",
         marginRight: "auto",
@@ -169,7 +161,6 @@ const styles = StyleSheet.create({
 
     summary: {
         textAlign: "center",
-        // backgroundColor: "#4286f4",
         fontSize: 50,
         color: "white",
         fontWeight: "bold",

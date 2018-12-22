@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-// import DropDown, {Select, Option, OptionList, updatePosition
-// } from 'react-native-dropdown';
+
 import ModalDropdown from 'react-native-modal-dropdown';
 import {AppRegistry, StyleSheet, Text,View, Image,TouchableOpacity, TouchableHighlight, ScrollView,
   } from 'react-native';
