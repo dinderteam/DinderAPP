@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/sloop/Desktop/dinder/DinderAPP/node_modules/react-native/ReactCommon/cxxreact/ReactMarker.cpp \
-  /Users/sloop/Desktop/dinder/DinderAPP/node_modules/react-native/ReactCommon/cxxreact/ReactMarker.h
+  /Users/Simonsays/Desktop/Dinder_mobile/DINDER/node_modules/react-native/ReactCommon/cxxreact/ReactMarker.cpp \
+  /Users/Simonsays/Desktop/Dinder_mobile/DINDER/node_modules/react-native/ReactCommon/cxxreact/ReactMarker.h

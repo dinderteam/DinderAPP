@@ -1,5 +1,5 @@
 dependencies: \
-  /Users/sloop/Desktop/dinder/DinderAPP/node_modules/react-native/ReactCommon/cxxreact/JSCMemory.cpp \
-  /Users/sloop/Desktop/dinder/DinderAPP/node_modules/react-native/ReactCommon/cxxreact/JSCMemory.h \
-  /Users/sloop/Desktop/dinder/DinderAPP/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/JavaScriptCore.h \
-  /Users/sloop/Desktop/dinder/DinderAPP/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/JSCWrapper.h
+  /Users/Simonsays/Desktop/Dinder_mobile/DINDER/node_modules/react-native/ReactCommon/cxxreact/JSCMemory.cpp \
+  /Users/Simonsays/Desktop/Dinder_mobile/DINDER/node_modules/react-native/ReactCommon/cxxreact/JSCMemory.h \
+  /Users/Simonsays/Desktop/Dinder_mobile/DINDER/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/JavaScriptCore.h \
+  /Users/Simonsays/Desktop/Dinder_mobile/DINDER/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/JSCWrapper.h

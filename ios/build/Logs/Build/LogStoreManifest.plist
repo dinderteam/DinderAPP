@@ -35,7 +35,7 @@
 			<key>uniqueIdentifier</key>
 			<string>8F620504-38F9-4542-AF0B-4D9A1D8ED686</string>
 		</dict>
-		<key>C3DA660D-6C2A-45C8-BB52-2F6BFBA6193A</key>
+		<key>9EDC1D85-8A48-4E32-BE78-DF719B955115</key>
 		<dict>
 			<key>className</key>
 			<string>IDECommandLineBuildLog</string>
@@ -44,7 +44,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>C3DA660D-6C2A-45C8-BB52-2F6BFBA6193A.xcactivitylog</string>
+			<string>9EDC1D85-8A48-4E32-BE78-DF719B955115.xcactivitylog</string>
 			<key>highLevelStatus</key>
 			<string>E</string>
 			<key>schemeIdentifier-containerName</key>
@@ -56,13 +56,13 @@
 			<key>signature</key>
 			<string>Building project DINDER with scheme DINDER and configuration Debug</string>
 			<key>timeStartedRecording</key>
-			<real>567133767.88242102</real>
+			<real>567207583.66211998</real>
 			<key>timeStoppedRecording</key>
-			<real>567133770.23166096</real>
+			<real>567207633.09369695</real>
 			<key>title</key>
 			<string>Building project DINDER with scheme DINDER and configuration Debug</string>
 			<key>uniqueIdentifier</key>
-			<string>C3DA660D-6C2A-45C8-BB52-2F6BFBA6193A</string>
+			<string>9EDC1D85-8A48-4E32-BE78-DF719B955115</string>
 		</dict>
 	</dict>
 </dict>

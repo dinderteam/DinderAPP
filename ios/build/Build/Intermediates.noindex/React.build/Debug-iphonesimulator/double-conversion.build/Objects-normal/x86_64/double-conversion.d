@@ -1,10 +1,10 @@
 dependencies: \
-  /Users/sloop/Desktop/dinder/DinderAPP/node_modules/react-native/third-party/double-conversion-1.1.6/src/double-conversion.cc \
-  /Users/sloop/Desktop/dinder/DinderAPP/node_modules/react-native/third-party/double-conversion-1.1.6/src/double-conversion.h \
-  /Users/sloop/Desktop/dinder/DinderAPP/node_modules/react-native/third-party/double-conversion-1.1.6/src/utils.h \
-  /Users/sloop/Desktop/dinder/DinderAPP/node_modules/react-native/third-party/double-conversion-1.1.6/src/bignum-dtoa.h \
-  /Users/sloop/Desktop/dinder/DinderAPP/node_modules/react-native/third-party/double-conversion-1.1.6/src/fast-dtoa.h \
-  /Users/sloop/Desktop/dinder/DinderAPP/node_modules/react-native/third-party/double-conversion-1.1.6/src/fixed-dtoa.h \
-  /Users/sloop/Desktop/dinder/DinderAPP/node_modules/react-native/third-party/double-conversion-1.1.6/src/ieee.h \
-  /Users/sloop/Desktop/dinder/DinderAPP/node_modules/react-native/third-party/double-conversion-1.1.6/src/diy-fp.h \
-  /Users/sloop/Desktop/dinder/DinderAPP/node_modules/react-native/third-party/double-conversion-1.1.6/src/strtod.h
+  /Users/Simonsays/Desktop/Dinder_mobile/DINDER/node_modules/react-native/third-party/double-conversion-1.1.6/src/double-conversion.cc \
+  /Users/Simonsays/Desktop/Dinder_mobile/DINDER/node_modules/react-native/third-party/double-conversion-1.1.6/src/double-conversion.h \
+  /Users/Simonsays/Desktop/Dinder_mobile/DINDER/node_modules/react-native/third-party/double-conversion-1.1.6/src/utils.h \
+  /Users/Simonsays/Desktop/Dinder_mobile/DINDER/node_modules/react-native/third-party/double-conversion-1.1.6/src/bignum-dtoa.h \
+  /Users/Simonsays/Desktop/Dinder_mobile/DINDER/node_modules/react-native/third-party/double-conversion-1.1.6/src/fast-dtoa.h \
+  /Users/Simonsays/Desktop/Dinder_mobile/DINDER/node_modules/react-native/third-party/double-conversion-1.1.6/src/fixed-dtoa.h \
+  /Users/Simonsays/Desktop/Dinder_mobile/DINDER/node_modules/react-native/third-party/double-conversion-1.1.6/src/ieee.h \
+  /Users/Simonsays/Desktop/Dinder_mobile/DINDER/node_modules/react-native/third-party/double-conversion-1.1.6/src/diy-fp.h \
+  /Users/Simonsays/Desktop/Dinder_mobile/DINDER/node_modules/react-native/third-party/double-conversion-1.1.6/src/strtod.h
