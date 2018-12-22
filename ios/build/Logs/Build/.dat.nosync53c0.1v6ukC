@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>logFormatVersion</key>
+	<integer>9</integer>
+	<key>logs</key>
+	<dict>
+		<key>020DA680-4CEB-4F6F-A01F-4D87CE4A5C92</key>
+		<dict>
+			<key>className</key>
+			<string>IDECommandLineBuildLog</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>020DA680-4CEB-4F6F-A01F-4D87CE4A5C92.xcactivitylog</string>
+			<key>highLevelStatus</key>
+			<string>S</string>
+			<key>schemeIdentifier-containerName</key>
+			<string>DINDER project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>DINDER</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Building project DINDER with scheme DINDER and configuration Debug</string>
+			<key>timeStartedRecording</key>
+			<real>566764879.384179</real>
+			<key>timeStoppedRecording</key>
+			<real>566764882.59185803</real>
+			<key>title</key>
+			<string>Building project DINDER with scheme DINDER and configuration Debug</string>
+			<key>uniqueIdentifier</key>
+			<string>020DA680-4CEB-4F6F-A01F-4D87CE4A5C92</string>
+		</dict>
+		<key>C211C942-6857-4AD1-85D3-170ACC430760</key>
+		<dict>
+			<key>className</key>
+			<string>IDECommandLineBuildLog</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>C211C942-6857-4AD1-85D3-170ACC430760.xcactivitylog</string>
+			<key>highLevelStatus</key>
+			<string>W</string>
+			<key>schemeIdentifier-containerName</key>
+			<string>DINDER project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>DINDER</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Building project DINDER with scheme DINDER and configuration Debug</string>
+			<key>timeStartedRecording</key>
+			<real>566764010.42450297</real>
+			<key>timeStoppedRecording</key>
+			<real>566764033.28608501</real>
+			<key>title</key>
+			<string>Building project DINDER with scheme DINDER and configuration Debug</string>
+			<key>uniqueIdentifier</key>
+			<string>C211C942-6857-4AD1-85D3-170ACC430760</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

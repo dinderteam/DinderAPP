@@ -21,6 +21,7 @@ app.use(logger);
 // grabs random data from from mlab data base
 
 app.get("/", (request, response) => {
+    console.log("s")
     db.collection('datas')
         .aggregate([{ $sample: { size: 1 } }])
         .toArray((err, results) => {
