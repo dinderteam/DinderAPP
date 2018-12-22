@@ -3,7 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>LastAccessedDate</key>
+<<<<<<< HEAD
 	<date>2018-12-22T21:39:43Z</date>
+=======
+	<date>2018-12-22T22:38:23Z</date>
+>>>>>>> 81d6ffd3779cc8f275dc169f6b207fbdccf0d921
 	<key>WorkspacePath</key>
 	<string>/Users/Simonsays/Desktop/Dinder_mobile/DINDER/ios/DINDER.xcodeproj</string>
 </dict>

@@ -35,6 +35,7 @@
 			<key>uniqueIdentifier</key>
 			<string>8F620504-38F9-4542-AF0B-4D9A1D8ED686</string>
 		</dict>
+<<<<<<< HEAD
 		<key>9EDC1D85-8A48-4E32-BE78-DF719B955115</key>
 		<dict>
 			<key>className</key>
@@ -64,6 +65,8 @@
 			<key>uniqueIdentifier</key>
 			<string>9EDC1D85-8A48-4E32-BE78-DF719B955115</string>
 		</dict>
+=======
+>>>>>>> 81d6ffd3779cc8f275dc169f6b207fbdccf0d921
 	</dict>
 </dict>
 </plist>
