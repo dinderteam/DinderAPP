@@ -35,35 +35,6 @@
 			<key>uniqueIdentifier</key>
 			<string>8F620504-38F9-4542-AF0B-4D9A1D8ED686</string>
 		</dict>
-		<key>C3DA660D-6C2A-45C8-BB52-2F6BFBA6193A</key>
-		<dict>
-			<key>className</key>
-			<string>IDECommandLineBuildLog</string>
-			<key>documentTypeString</key>
-			<string>&lt;nil&gt;</string>
-			<key>domainType</key>
-			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
-			<key>fileName</key>
-			<string>C3DA660D-6C2A-45C8-BB52-2F6BFBA6193A.xcactivitylog</string>
-			<key>highLevelStatus</key>
-			<string>E</string>
-			<key>schemeIdentifier-containerName</key>
-			<string>DINDER project</string>
-			<key>schemeIdentifier-schemeName</key>
-			<string>DINDER</string>
-			<key>schemeIdentifier-sharedScheme</key>
-			<integer>1</integer>
-			<key>signature</key>
-			<string>Building project DINDER with scheme DINDER and configuration Debug</string>
-			<key>timeStartedRecording</key>
-			<real>567133767.88242102</real>
-			<key>timeStoppedRecording</key>
-			<real>567133770.23166096</real>
-			<key>title</key>
-			<string>Building project DINDER with scheme DINDER and configuration Debug</string>
-			<key>uniqueIdentifier</key>
-			<string>C3DA660D-6C2A-45C8-BB52-2F6BFBA6193A</string>
-		</dict>
 	</dict>
 </dict>
 </plist>
